@@ -1,0 +1,255 @@
+{
+  "summary": {
+    "totalValidationDays": 122,
+    "totalGridPointsEvaluated": 17415,
+    "monsoonSeason": "JJAS 2023 (June 1 - Sept 30)",
+    "verificationSource": "IMD 0.25° Daily Gridded Rainfall",
+    "overallRmseReductionPct": 28.4,
+    "heavyCsiImprovementPct": 42.1
+  },
+  "overallMetrics": [
+    {
+      "metric": "RMSE",
+      "name": "Root Mean Square Error",
+      "unit": "mm",
+      "b1_raw": 19.8,
+      "b2_qm": 16.4,
+      "b3_xgb": 15.1,
+      "b4_regime_xgb": 14.2,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 28.3,
+      "direction": "lower",
+      "description": "Measures overall magnitude of forecast error across all rain amounts."
+    },
+    {
+      "metric": "MAE",
+      "name": "Mean Absolute Error",
+      "unit": "mm",
+      "b1_raw": 11.2,
+      "b2_qm": 9.4,
+      "b3_xgb": 8.3,
+      "b4_regime_xgb": 7.6,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 32.1,
+      "direction": "lower",
+      "description": "Average absolute difference between predicted and observed rainfall."
+    },
+    {
+      "metric": "Bias",
+      "name": "Multiplicative Mean Bias",
+      "unit": "ratio",
+      "b1_raw": 1.28,
+      "b2_qm": 1.02,
+      "b3_xgb": 1.06,
+      "b4_regime_xgb": 1.01,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 96.4,
+      "direction": "closer_to_1",
+      "description": "Mean predicted / Mean observed. Raw GFS exhibits 28% systemic wet bias."
+    },
+    {
+      "metric": "CSI_10mm",
+      "name": "Critical Success Index (>10mm)",
+      "unit": "index",
+      "b1_raw": 0.44,
+      "b2_qm": 0.49,
+      "b3_xgb": 0.53,
+      "b4_regime_xgb": 0.58,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 31.8,
+      "direction": "higher",
+      "description": "Hits / (Hits + Misses + False Alarms). Threat score for moderate rain."
+    },
+    {
+      "metric": "CSI_50mm",
+      "name": "Critical Success Index (>50mm)",
+      "unit": "index",
+      "b1_raw": 0.19,
+      "b2_qm": 0.22,
+      "b3_xgb": 0.24,
+      "b4_regime_xgb": 0.32,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 68.4,
+      "direction": "higher",
+      "description": "High-impact threshold CSI. Regime awareness drastically cuts false alarms."
+    },
+    {
+      "metric": "POD_50mm",
+      "name": "Probability of Detection (>50mm)",
+      "unit": "rate",
+      "b1_raw": 0.62,
+      "b2_qm": 0.59,
+      "b3_xgb": 0.64,
+      "b4_regime_xgb": 0.73,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 17.7,
+      "direction": "higher",
+      "description": "Fraction of true heavy rainfall events correctly flagged (Hit Rate)."
+    },
+    {
+      "metric": "FAR_50mm",
+      "name": "False Alarm Ratio (>50mm)",
+      "unit": "rate",
+      "b1_raw": 0.69,
+      "b2_qm": 0.58,
+      "b3_xgb": 0.55,
+      "b4_regime_xgb": 0.42,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 39.1,
+      "direction": "lower",
+      "description": "Fraction of predicted heavy events that did not verify. B4 cuts false alarms by 39%."
+    },
+    {
+      "metric": "ETS_50mm",
+      "name": "Equitable Threat Score (>50mm)",
+      "unit": "score",
+      "b1_raw": 0.14,
+      "b2_qm": 0.18,
+      "b3_xgb": 0.20,
+      "b4_regime_xgb": 0.28,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 100.0,
+      "direction": "higher",
+      "description": "Threat score penalized for hits associated with random chance."
+    },
+    {
+      "metric": "FSS_5x5",
+      "name": "Fractions Skill Score (5x5 Grid, >50mm)",
+      "unit": "score",
+      "b1_raw": 0.38,
+      "b2_qm": 0.43,
+      "b3_xgb": 0.48,
+      "b4_regime_xgb": 0.62,
+      "bestModel": "b4_regime_xgb",
+      "improvementPct": 63.2,
+      "direction": "higher",
+      "description": "Spatial neighborhood verification accounting for slight spatial displacement."
+    }
+  ],
+  "thresholdBreakdown": {
+    "1mm": [
+      { "metric": "CSI", "b1_raw": 0.62, "b2_qm": 0.66, "b3_xgb": 0.70, "b4_regime_xgb": 0.74, "unit": "index" },
+      { "metric": "POD", "b1_raw": 0.88, "b2_qm": 0.85, "b3_xgb": 0.87, "b4_regime_xgb": 0.89, "unit": "rate" },
+      { "metric": "FAR", "b1_raw": 0.32, "b2_qm": 0.25, "b3_xgb": 0.21, "b4_regime_xgb": 0.18, "unit": "rate" },
+      { "metric": "ETS", "b1_raw": 0.39, "b2_qm": 0.44, "b3_xgb": 0.48, "b4_regime_xgb": 0.54, "unit": "score" }
+    ],
+    "10mm": [
+      { "metric": "CSI", "b1_raw": 0.44, "b2_qm": 0.49, "b3_xgb": 0.53, "b4_regime_xgb": 0.58, "unit": "index" },
+      { "metric": "POD", "b1_raw": 0.72, "b2_qm": 0.68, "b3_xgb": 0.71, "b4_regime_xgb": 0.76, "unit": "rate" },
+      { "metric": "FAR", "b1_raw": 0.48, "b2_qm": 0.39, "b3_xgb": 0.34, "b4_regime_xgb": 0.28, "unit": "rate" },
+      { "metric": "ETS", "b1_raw": 0.29, "b2_qm": 0.34, "b3_xgb": 0.38, "b4_regime_xgb": 0.44, "unit": "score" }
+    ],
+    "50mm": [
+      { "metric": "CSI", "b1_raw": 0.19, "b2_qm": 0.22, "b3_xgb": 0.24, "b4_regime_xgb": 0.32, "unit": "index" },
+      { "metric": "POD", "b1_raw": 0.62, "b2_qm": 0.59, "b3_xgb": 0.64, "b4_regime_xgb": 0.73, "unit": "rate" },
+      { "metric": "FAR", "b1_raw": 0.69, "b2_qm": 0.58, "b3_xgb": 0.55, "b4_regime_xgb": 0.42, "unit": "rate" },
+      { "metric": "ETS", "b1_raw": 0.14, "b2_qm": 0.18, "b3_xgb": 0.20, "b4_regime_xgb": 0.28, "unit": "score" }
+    ],
+    "100mm": [
+      { "metric": "CSI", "b1_raw": 0.08, "b2_qm": 0.10, "b3_xgb": 0.12, "b4_regime_xgb": 0.19, "unit": "index" },
+      { "metric": "POD", "b1_raw": 0.41, "b2_qm": 0.38, "b3_xgb": 0.45, "b4_regime_xgb": 0.58, "unit": "rate" },
+      { "metric": "FAR", "b1_raw": 0.81, "b2_qm": 0.72, "b3_xgb": 0.68, "b4_regime_xgb": 0.52, "unit": "rate" },
+      { "metric": "ETS", "b1_raw": 0.06, "b2_qm": 0.08, "b3_xgb": 0.10, "b4_regime_xgb": 0.16, "unit": "score" }
+    ]
+  },
+  "categoryVerification": [
+    {
+      "category": "No / Low Rain",
+      "rainfallRange": "< 2.5 mm",
+      "sampleCount": 11840,
+      "sampleRatioPct": 68.0,
+      "rmseB1": 6.8,
+      "rmseB4": 2.1,
+      "podB1": 0.94,
+      "podB4": 0.98,
+      "farB1": 0.28,
+      "farB4": 0.08,
+      "sampleWarning": false
+    },
+    {
+      "category": "Moderate Rain",
+      "rainfallRange": "15.6 - 64.4 mm",
+      "sampleCount": 4320,
+      "sampleRatioPct": 24.8,
+      "rmseB1": 17.5,
+      "rmseB4": 10.4,
+      "podB1": 0.72,
+      "podB4": 0.81,
+      "farB1": 0.41,
+      "farB4": 0.24,
+      "sampleWarning": false
+    },
+    {
+      "category": "Heavy Rain",
+      "rainfallRange": "64.5 - 115.5 mm",
+      "sampleCount": 1012,
+      "sampleRatioPct": 5.8,
+      "rmseB1": 34.2,
+      "rmseB4": 21.6,
+      "podB1": 0.61,
+      "podB4": 0.73,
+      "farB1": 0.67,
+      "farB4": 0.39,
+      "sampleWarning": false
+    },
+    {
+      "category": "Very Heavy / Extreme",
+      "rainfallRange": "≥ 115.6 mm",
+      "sampleCount": 243,
+      "sampleRatioPct": 1.4,
+      "rmseB1": 56.4,
+      "rmseB4": 38.1,
+      "podB1": 0.42,
+      "podB4": 0.60,
+      "farB1": 0.78,
+      "farB4": 0.49,
+      "sampleWarning": true
+    }
+  ],
+  "fssNeighborhoodScaling": [
+    {
+      "neighborhood": "1x1 (Grid Scale)",
+      "gridDegrees": "0.25° × 0.25°",
+      "kmScale": 27,
+      "fss10mmB1": 0.48,
+      "fss10mmB4": 0.61,
+      "fss50mmB1": 0.22,
+      "fss50mmB4": 0.36,
+      "fss100mmB1": 0.09,
+      "fss100mmB4": 0.20
+    },
+    {
+      "neighborhood": "3x3 Window",
+      "gridDegrees": "0.75° × 0.75°",
+      "kmScale": 83,
+      "fss10mmB1": 0.62,
+      "fss10mmB4": 0.76,
+      "fss50mmB1": 0.31,
+      "fss50mmB4": 0.49,
+      "fss100mmB1": 0.16,
+      "fss100mmB4": 0.32
+    },
+    {
+      "neighborhood": "5x5 Window",
+      "gridDegrees": "1.25° × 1.25°",
+      "kmScale": 138,
+      "fss10mmB1": 0.71,
+      "fss10mmB4": 0.84,
+      "fss50mmB1": 0.38,
+      "fss50mmB4": 0.62,
+      "fss100mmB1": 0.24,
+      "fss100mmB4": 0.46
+    },
+    {
+      "neighborhood": "7x7 Window",
+      "gridDegrees": "1.75° × 1.75°",
+      "kmScale": 194,
+      "fss10mmB1": 0.77,
+      "fss10mmB4": 0.89,
+      "fss50mmB1": 0.45,
+      "fss50mmB4": 0.71,
+      "fss100mmB1": 0.31,
+      "fss100mmB4": 0.58
+    }
+  ]
+}

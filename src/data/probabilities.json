@@ -1,0 +1,45 @@
+{
+  "reliabilityCurve64_5mm": [
+    { "forecastProbability": 0.05, "observedRelativeFrequencyB1": 0.02, "observedRelativeFrequencyB4": 0.06, "sampleCount": 4200 },
+    { "forecastProbability": 0.15, "observedRelativeFrequencyB1": 0.05, "observedRelativeFrequencyB4": 0.14, "sampleCount": 2180 },
+    { "forecastProbability": 0.25, "observedRelativeFrequencyB1": 0.11, "observedRelativeFrequencyB4": 0.23, "sampleCount": 1420 },
+    { "forecastProbability": 0.35, "observedRelativeFrequencyB1": 0.18, "observedRelativeFrequencyB4": 0.34, "sampleCount": 980 },
+    { "forecastProbability": 0.45, "observedRelativeFrequencyB1": 0.26, "observedRelativeFrequencyB4": 0.43, "sampleCount": 710 },
+    { "forecastProbability": 0.55, "observedRelativeFrequencyB1": 0.33, "observedRelativeFrequencyB4": 0.53, "sampleCount": 540 },
+    { "forecastProbability": 0.65, "observedRelativeFrequencyB1": 0.41, "observedRelativeFrequencyB4": 0.63, "sampleCount": 410 },
+    { "forecastProbability": 0.75, "observedRelativeFrequencyB1": 0.52, "observedRelativeFrequencyB4": 0.74, "sampleCount": 320 },
+    { "forecastProbability": 0.85, "observedRelativeFrequencyB1": 0.61, "observedRelativeFrequencyB4": 0.83, "sampleCount": 210 },
+    { "forecastProbability": 0.95, "observedRelativeFrequencyB1": 0.70, "observedRelativeFrequencyB4": 0.92, "sampleCount": 140 }
+  ],
+  "rocCurve": [
+    { "fpr": 0.00, "tprB1": 0.00, "tprB4": 0.00 },
+    { "fpr": 0.02, "tprB1": 0.12, "tprB4": 0.28 },
+    { "fpr": 0.05, "tprB1": 0.24, "tprB4": 0.52 },
+    { "fpr": 0.10, "tprB1": 0.39, "tprB4": 0.71 },
+    { "fpr": 0.15, "tprB1": 0.51, "tprB4": 0.82 },
+    { "fpr": 0.20, "tprB1": 0.60, "tprB4": 0.88 },
+    { "fpr": 0.30, "tprB1": 0.72, "tprB4": 0.94 },
+    { "fpr": 0.40, "tprB1": 0.81, "tprB4": 0.97 },
+    { "fpr": 0.60, "tprB1": 0.91, "tprB4": 0.99 },
+    { "fpr": 1.00, "tprB1": 1.00, "tprB4": 1.00 }
+  ],
+  "prCurve": [
+    { "recall": 0.05, "precisionB1": 0.55, "precisionB4": 0.89 },
+    { "recall": 0.15, "precisionB1": 0.50, "precisionB4": 0.85 },
+    { "recall": 0.30, "precisionB1": 0.44, "precisionB4": 0.80 },
+    { "recall": 0.50, "precisionB1": 0.38, "precisionB4": 0.74 },
+    { "recall": 0.65, "precisionB1": 0.31, "precisionB4": 0.68 },
+    { "recall": 0.75, "precisionB1": 0.25, "precisionB4": 0.61 },
+    { "recall": 0.85, "precisionB1": 0.19, "precisionB4": 0.52 },
+    { "recall": 0.95, "precisionB1": 0.12, "precisionB4": 0.38 }
+  ],
+  "scores": {
+    "brierScoreB1": 0.098,
+    "brierScoreB4": 0.048,
+    "brierSkillScore": 0.51,
+    "rocAucB1": 0.72,
+    "rocAucB4": 0.90,
+    "prAucB1": 0.34,
+    "prAucB4": 0.71
+  }
+}
